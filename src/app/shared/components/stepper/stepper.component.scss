@@ -1,0 +1,44 @@
+
+.steper{
+  display: flex;
+  width: 188px;
+  .step{
+    display: flex;
+    align-items: center;
+    &:not(:last-child){
+      flex: 1;
+    }
+    &:not(:last-child)::after{
+      content: '';
+      height: 1px;
+      width: 20px;
+      background: #AAAAAA;
+      flex: 1;
+    }
+    div{
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      border: 1px solid #AAAAAA;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0px 5px;
+    }
+  }
+  .active{
+    div{
+      border: none;
+      background: #FFFFFF;
+      border: 1px solid #1EEB00;
+      &::before {
+        content: '';
+        display: block;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: #1EEB00;
+      }
+    }
+  }
+}
