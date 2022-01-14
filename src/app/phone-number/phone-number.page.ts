@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./phone-number.page.scss'],
 })
 export class PhoneNumberPage implements OnInit {
-
+  value = '';
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onChange(value: string) {
+    this.value = value;
   }
 
 }

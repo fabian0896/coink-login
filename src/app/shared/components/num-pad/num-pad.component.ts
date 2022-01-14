@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-num-pad',
@@ -6,9 +6,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./num-pad.component.scss'],
 })
 export class NumPadComponent implements OnInit {
-  numbers: number[] = Array.from({ length: 12 }, (_, i) => i + 1);
-  constructor() { }
+  @Output() valueChange = new EventEmitter<string>();
+
+  lenLimit = 10;
+
+  numbers: (number | string)[][] = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    ['DEL', 0, 'OK'],
+  ];
+
+  value = '';
+
+  constructor() {}
 
   ngOnInit() {}
+
+  onChange(v: number | 'OK' | 'DEL') {
+    if (v === 'DEL' && v.length > 0) {
+      this.value = this.value.substring(0, this.value.length - 1);
+    } else if (v === 'OK') {
+      console.log('listooo');
+    } else if (this.value.length < this.lenLimit) {
+      this.value += String(v);
+    }
+    this.valueChange.emit(this.value);
+  }
 
 }

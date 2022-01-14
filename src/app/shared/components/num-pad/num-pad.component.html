@@ -1,8 +1,29 @@
 <div class="num-pad">
   <button
-    class="pad"
-    *ngFor="let num of numbers"
+    class="pad ion-activatable"
+    *ngFor="let num of [1,2,3,4,5,6,7,8,9]"
+    (click)="onChange(num)"
   >
-  {{ num }}
-</button>
+    {{ num }}
+    <ion-ripple-effect></ion-ripple-effect>
+  </button>
+  <button
+    (click)="onChange('DEL')"
+    class="pad ion-activatable">
+    <img src="/assets/images/backspace.svg" alt="backspace">
+    <ion-ripple-effect></ion-ripple-effect>
+  </button>
+  <button
+    (click)="onChange(0)"
+    class="pad ion-activatable">
+    0
+    <ion-ripple-effect></ion-ripple-effect>
+  </button>
+  <button
+    [disabled]="value.length < lenLimit"
+    (click)="onChange('OK')"
+    class="pad circle ion-activatable">
+    <img src="/assets/images/check.svg" alt="check">
+    <ion-ripple-effect></ion-ripple-effect>
+  </button>
 </div>

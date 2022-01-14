@@ -20,9 +20,9 @@
       <p>Para comenzar, por favor ingresa <span>tu número celular.</span></p>
     </div>
     <div class="input-container">
-      <input placeholder="( X X X - X X X X X X )" type="text">
+      <input [value]="value | phoneNumber" placeholder="( X X X - X X X X X X )" type="text">
     </div>
     <div style="flex: 1;"></div>
-    <app-num-pad></app-num-pad>
+    <app-num-pad (valueChange)="onChange($event)"></app-num-pad>
   </div>
 </ion-content>

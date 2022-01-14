@@ -1,8 +1,7 @@
 .num-pad{
   width: 100%;
-  height: 245px;
+  height: 300px;
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -12,4 +11,23 @@
   font-size: 32px;
   line-height: 38px;
   background: transparent;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.circle {
+  background: #1EEA00;
+  transition: .1s;
+  &:disabled{
+    background: #D3D3D3;
+  }
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  place-self: center;
+  overflow: hidden;
 }
