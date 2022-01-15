@@ -4,7 +4,7 @@
     <p>Digíta el código que recibiste vía <span>mensaje de texto</span> al {{ phone | phoneNumber }}</p>
   </div>
   <div class="input-container">
-    <input [value]="value" placeholder="X X X X" type="text">
+    <input [readonly]="true" [value]="value" placeholder="X X X X" type="text">
   </div>
   <div style="flex: 1;"></div>
   <app-num-pad

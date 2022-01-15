@@ -9,5 +9,159 @@
         <p>Ahora necesitamos saber algunos datos tuyos</p>
       </div>
     </div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+      <div class="form-group">
+        <h2 class="title">Documento de identidad</h2>
+
+        <div>
+          <ion-item
+            [class.error]="documentType.errors && documentType.touched"
+          >
+            <ion-label position="floating">Tipo de documento</ion-label>
+            <ion-select formControlName="documentType" okText="Okay!">
+              <ion-select-option value="bacon">Cedula de ciudadania</ion-select-option>
+              <ion-select-option value="olives">Nit de empresa</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <div *ngIf="documentType.errors && documentType.touched" class="error-message">
+            Por favor selecciona un tipo de documento
+          </div>
+        </div>
+
+        <div>
+          <ion-item
+            [class.error]="document.errors && document.touched"
+          >
+            <ion-label position="floating">Numero de documento</ion-label>
+            <ion-input formControlName="document"></ion-input>
+          </ion-item>
+          <div *ngIf="document.errors && document.touched" class="error-message">
+            el numero de documento es requerido
+          </div>
+        </div>
+
+        <div>
+          <app-datetime
+            [error]="expeditionDate.errors && expeditionDate.touched"
+            formControlName="expeditionDate"
+            label="Fecha de expedición del documento">
+          </app-datetime>
+          <div *ngIf="expeditionDate.errors && expeditionDate.touched" class="error-message">
+            La fecha de expedición es requerida
+          </div>
+        </div>
+
+        <div>
+          <app-datetime
+            [error]="birthday.errors && birthday.touched"
+            formControlName="birthday"
+            label="Fecha de nacimiento">
+          </app-datetime>
+          <div *ngIf="birthday.errors && birthday.touched" class="error-message">
+            La fecha de nacimiento es requerida
+          </div>
+        </div>
+
+        <div>
+          <ion-item
+            [class.error]="gender.errors && gender.touched"
+          >
+            <ion-label position="floating">Genero</ion-label>
+            <ion-select formControlName="gender" okText="Okay!">
+              <ion-select-option value="bacon">Cedula de ciudadania</ion-select-option>
+              <ion-select-option value="olives">Nit de empresa</ion-select-option>
+            </ion-select>
+          </ion-item>
+          <div *ngIf="gender.errors && gender.touched" class="error-message">
+            Selecciona un genero
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <h2 class="title">Configura tu cuenta</h2>
+
+        <div>
+          <ion-item
+            [class.error]="email.errors && email.touched"
+          >
+            <ion-label position="floating">Correo electrónico</ion-label>
+            <ion-input formControlName="email" type="email"></ion-input>
+          </ion-item>
+          <div *ngIf="email.errors?.required && email.touched" class="error-message">
+            El correo electronico es requerido
+          </div>
+          <div *ngIf="email.errors?.email && email.touched" class="error-message">
+            Ingresa un correo valido
+          </div>
+        </div>
+
+        <div>
+          <ion-item
+            [class.error]="(emailConfirm.errors || form.errors?.mismatchEmail) && emailConfirm.touched"
+          >
+            <ion-label position="floating">Confirmar correo electrónico</ion-label>
+            <ion-input formControlName="emailConfirm" type="email"></ion-input>
+          </ion-item>
+          <div *ngIf="form.errors?.mismatchEmail && emailConfirm.touched" class="error-message">
+            Los correos deben coincidir
+          </div>
+        </div>
+
+        <div>
+          <ion-item
+            [class.error]="code.errors && code.touched"
+          >
+            <ion-button
+              (click)="toggleShowCode()"
+              class="icon"
+              fill="clear">
+              <ion-icon [icon]="showCode ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+            </ion-button>
+            <ion-label position="floating">PIN de seguridad</ion-label>
+            <ion-input
+              inputmode="numeric"
+              formControlName="code"
+              [type]="showCode ? 'text' : 'password'">
+            </ion-input>
+          </ion-item>
+          <div *ngIf="code.errors?.required && code.touched" class="error-message">
+            El codigo es requerido
+          </div>
+          <div *ngIf="code.errors?.minlength && code.touched" class="error-message">
+            El codigo debe ser de por lo menos 4 numeros
+          </div>
+        </div>
+
+        <div>
+          <ion-item
+            [class.error]="(codeConfirm.errors || form.errors?.mismatchCode) && codeConfirm.touched"
+          >
+            <ion-button
+              (click)="toggleShowCodeConfirm()"
+              class="icon"
+              fill="clear">
+              <ion-icon [icon]="showCodeConfirm ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+            </ion-button>
+            <ion-label position="floating">Confirmar PIN de seguridad</ion-label>
+            <ion-input
+              inputmode="numeric"
+              formControlName="codeConfirm"
+              [type]="showCodeConfirm ? 'text' : 'password'">
+            </ion-input>
+          </ion-item>
+          <div *ngIf="form.errors?.mismatchCode && codeConfirm.touched" class="error-message">
+            Los codigos deben coincidir
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="form.invalid" class="submit-btn ion-activatable">
+        SIGUIENTE
+        <ion-ripple-effect></ion-ripple-effect>
+      </button>
+    </form>
+
   </div>
 </ion-content>

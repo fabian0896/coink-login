@@ -4,7 +4,7 @@
     <p>Para comenzar, por favor ingresa <span>tu número celular.</span></p>
   </div>
   <div class="input-container">
-    <input [value]="value | phoneNumber" placeholder="( X X X - X X X X X X )" type="text">
+    <input [readonly]="true" [value]="value | phoneNumber" placeholder="( X X X - X X X X X X )" type="text">
   </div>
   <div style="flex: 1;"></div>
   <app-num-pad
