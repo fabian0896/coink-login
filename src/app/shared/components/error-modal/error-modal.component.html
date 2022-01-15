@@ -1,0 +1,10 @@
+<app-modal [openModal]="openModal">
+  <img
+    (click)="onClose()"
+    class="close-icon"
+    src="/assets/images/close.svg"
+    alt="close-icon">
+  <h2 class="title">CÓDIGO INCORRECTO</h2>
+  <p class="body">El código que ingresaste es incorrecto, enviaremos un nuevo código a tu correo electrónico.</p>
+  <button (click)="onActionClick()" class="action">Reenviar código</button>
+</app-modal>

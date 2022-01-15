@@ -1,0 +1,16 @@
+<div class="content">
+  <div class="message">
+    <img src="/assets/images/Oink.svg" alt="">
+    <p>Para comenzar, por favor ingresa <span>tu número celular.</span></p>
+  </div>
+  <div class="input-container">
+    <input [value]="value | phoneNumber" placeholder="( X X X - X X X X X X )" type="text">
+  </div>
+  <div style="flex: 1;"></div>
+  <app-num-pad
+    (confirm)="onConfirm($event)"
+    (valueChange)="onChange($event)">
+  </app-num-pad>
+</div>
+
+

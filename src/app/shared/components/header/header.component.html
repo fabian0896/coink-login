@@ -1,0 +1,14 @@
+<ion-header slot="fixed">
+  <div class="header-container">
+    <div class="header">
+      <ion-icon
+        routerLink="/login"
+        class="icon"
+        size="large"
+        name="chevron-back-outline">
+      </ion-icon>
+      <h2 class="title">{{ title }}</h2>
+    </div>
+    <app-stepper [step]="step"></app-stepper>
+  </div>
+</ion-header>

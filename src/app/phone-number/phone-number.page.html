@@ -1,28 +1,4 @@
-<ion-header>
-  <div class="header-container">
-    <div class="header">
-      <ion-icon
-        routerLink="/login"
-        class="icon"
-        size="large"
-        name="chevron-back-outline">
-      </ion-icon>
-      <h2 class="title">NÚMERO CELULAR</h2>
-    </div>
-    <app-stepper [step]="1"></app-stepper>
-  </div>
-</ion-header>
-
-<ion-content>
-  <div class="content">
-    <div class="message">
-      <img src="/assets/images/Oink.svg" alt="">
-      <p>Para comenzar, por favor ingresa <span>tu número celular.</span></p>
-    </div>
-    <div class="input-container">
-      <input [value]="value | phoneNumber" placeholder="( X X X - X X X X X X )" type="text">
-    </div>
-    <div style="flex: 1;"></div>
-    <app-num-pad (valueChange)="onChange($event)"></app-num-pad>
-  </div>
+<app-header title="NÚMERO CELULAR" [step]="1"></app-header>
+<ion-content slot="fixed">
+  <ion-router-outlet></ion-router-outlet>
 </ion-content>

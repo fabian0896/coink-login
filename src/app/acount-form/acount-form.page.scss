@@ -11,34 +11,24 @@
   gap: 23px;
   border-bottom: 1px solid #1EEA00;
   margin-bottom: 32px;
+  .title {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    color: #004B40;
+  }
   img {
     width: 72px;
   }
   p{
+    font-family: 'Avenir LT Std', sans-serif;
     color: #757575;
     font-size: 16px;
     line-height: 19px;
     font-weight: 500;
+    margin: 12px 0;
   }
   span {
     font-weight: 700;
-  }
-}
-
-.input-container{
-  background: #FAFAFA;
-  width: 100%;
-  padding: 14px 40px;
-  border-radius: 5px;
-  box-shadow: #3535351A 0px 5px 5px;
-  input{
-    outline: none;
-    font-size: 24px;
-    text-align: center;
-    font-weight: 500;
-    color: #212121;
-    width: 100%;
-    border: none;
-    background: transparent;
   }
 }

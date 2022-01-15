@@ -1,0 +1,21 @@
+<div class="content">
+  <div class="message">
+    <img src="/assets/images/Oink.svg" alt="">
+    <p>Digíta el código que recibiste vía <span>mensaje de texto</span> al {{ phone | phoneNumber }}</p>
+  </div>
+  <div class="input-container">
+    <input [value]="value" placeholder="X X X X" type="text">
+  </div>
+  <div style="flex: 1;"></div>
+  <app-num-pad
+    [maxLen]="4"
+    (confirm)="verifyCode($event)"
+    (valueChange)="onChange($event)">
+  </app-num-pad>
+</div>
+
+<app-error-modal
+  (actionClick)="resendCode()"
+  (closeModal)="onCloseErrorModal()"
+  [openModal]="error">
+</app-error-modal>

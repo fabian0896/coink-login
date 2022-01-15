@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-num-pad',
@@ -7,8 +7,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class NumPadComponent implements OnInit {
   @Output() valueChange = new EventEmitter<string>();
+  @Output() confirm = new EventEmitter<string>();
 
-  lenLimit = 10;
+  @Input() maxLen = 10;
 
   numbers: (number | string)[][] = [
     [1, 2, 3],
@@ -27,8 +28,9 @@ export class NumPadComponent implements OnInit {
     if (v === 'DEL' && v.length > 0) {
       this.value = this.value.substring(0, this.value.length - 1);
     } else if (v === 'OK') {
-      console.log('listooo');
-    } else if (this.value.length < this.lenLimit) {
+      this.confirm.emit(this.value);
+      this.value = '';
+    } else if (this.value.length < this.maxLen) {
       this.value += String(v);
     }
     this.valueChange.emit(this.value);

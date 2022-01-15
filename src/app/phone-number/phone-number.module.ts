@@ -8,6 +8,8 @@ import { PhoneNumberPageRoutingModule } from './phone-number-routing.module';
 
 import { PhoneNumberPage } from './phone-number.page';
 import { SharedModule } from '../shared/shared.module';
+import { CodeVerificationPage } from './pages/code-verification/code-verification.page';
+import { PhoneFormPage } from './pages/phone-form/phone-form.page';
 
 @NgModule({
   imports: [
@@ -17,6 +19,10 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule,
     PhoneNumberPageRoutingModule
   ],
-  declarations: [PhoneNumberPage]
+  declarations: [
+    PhoneNumberPage,
+    CodeVerificationPage,
+    PhoneFormPage,
+  ]
 })
 export class PhoneNumberPageModule {}

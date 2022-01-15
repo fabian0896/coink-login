@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'phone-number',
     loadChildren: () => import('./phone-number/phone-number.module').then( m => m.PhoneNumberPageModule)
+  },
+  {
+    path: 'acount-form',
+    loadChildren: () => import('./acount-form/acount-form.module').then( m => m.AcountFormPageModule)
   }
 ];
 @NgModule({
