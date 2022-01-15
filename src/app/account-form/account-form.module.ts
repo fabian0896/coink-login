@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AcountFormPageRoutingModule } from './acount-form-routing.module';
+import { AcountFormPageRoutingModule } from './account-form-routing.module';
 
-import { AcountFormPage } from './acount-form.page';
+import { AccountFormPage } from './account-form.page';
 import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
@@ -18,6 +18,6 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule,
     ReactiveFormsModule,
   ],
-  declarations: [AcountFormPage]
+  declarations: [AccountFormPage]
 })
 export class AcountFormPageModule {}

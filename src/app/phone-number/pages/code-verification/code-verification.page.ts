@@ -36,7 +36,7 @@ export class CodeVerificationPage implements OnInit {
   verifyCode(code: string) {
     const sameCode = this.coinkService.verifyCode(code);
     if (sameCode) {
-      this.router.navigate(['/acount-form'], {
+      this.router.navigateByUrl('/account-form', {
         state: {
           phone: this.phone,
         },

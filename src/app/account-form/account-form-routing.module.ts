@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AcountFormPage } from './acount-form.page';
+import { AccountFormPage } from './account-form.page';
 
 const routes: Routes = [
   {
     path: '',
-    component: AcountFormPage
+    component: AccountFormPage
   }
 ];
 

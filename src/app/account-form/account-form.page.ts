@@ -5,10 +5,10 @@ import { format, parseISO } from 'date-fns';
 
 @Component({
   selector: 'app-acount-form',
-  templateUrl: './acount-form.page.html',
-  styleUrls: ['./acount-form.page.scss'],
+  templateUrl: './account-form.page.html',
+  styleUrls: ['./account-form.page.scss'],
 })
-export class AcountFormPage implements OnInit {
+export class AccountFormPage implements OnInit {
   @ViewChild(IonDatetime, { static: true }) datetime: IonDatetime;
   form: FormGroup;
   showCode = false;
