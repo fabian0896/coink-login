@@ -1,0 +1,41 @@
+<app-header title="FINALIZAR" [step]="3"></app-header>
+<ion-content>
+  <div class="message">
+    <img src="/assets/images/OinkPolicia.svg" alt="">
+    <div>
+      <h2 class="title">ESTAS MUY CERCA DE SER PARTE DE COINK.</h2>
+      <p>Solo es necesario que leas detenidamente el contrato que se encuentra al final de esta pantalla y lo aceptes.</p>
+    </div>
+  </div>
+
+  <div class="main">
+    <h2 class="title">LO MÁS IMPORTANTE</h2>
+    <p>Para la apertura del Depósito de Bajo Monto en COINK debes ser una persona natural que de acuerdo con nuestra legislación vigente te encuentres en plena capacidad para adquirir derechos y contraer obligaciones. </p>
+    <p>Abrirás una cuenta COINK de Bajo Monto la cual te permitirá tener un saldo hasta por 8 salarios mínimos en el mes y realizar débitos por el mismo valor. Si deseas sobrepasar estos límites debes solicitarnos la apertura de un Depósito Ordinario COINK Persona Natural.</p>
+    <p>Solo puedes tener una cuenta COINK de Bajo Monto y podrás utilizar tu dispositivo móvil para consultar tu saldo, tus movimien</p>
+    <p>Recuerda que no necesitas saldo mínimo ni monto inicial para su apertura.</p>
+    <p class="link">
+      <a>Lee tu contrato</a>
+    </p>
+    <form class="confirm-form" action="">
+      <ion-checkbox [formControl]="checkTerms" id="terms-and-conditions" mode="md" color="primary"></ion-checkbox>
+      <label for="terms-and-conditions">He leído ya acepto el contrato</label>
+    </form>
+  </div>
+  <button
+    [disabled]="checkTerms.invalid"
+    class="btn">
+    ACEPTAR
+  </button>
+</ion-content>
+
+<app-modal [openModal]="true">
+  <div class="modal">
+    <img src="/assets/images/marrano-regalo.svg" alt="">
+    <div>
+      <h2 class="title">¡Bienvenido a Coink!</h2>
+      <p>¡Cuenta creada exitosamente, tu marrano ya está listo para que empieces a ahorrar!</p>
+    </div>
+    <button class="btn">CONTINUAR</button>
+  </div>
+</app-modal>

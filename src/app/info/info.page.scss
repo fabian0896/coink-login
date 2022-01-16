@@ -1,0 +1,119 @@
+ion-content{
+  --padding-bottom: 24px;
+  --padding-end: 24px;
+  --padding-start: 24px;
+  --padding-top: 24px;
+}
+
+.message{
+  padding: 24px 0;
+  padding-top: 0;
+  display: flex;
+  gap: 23px;
+  border-bottom: 1px solid #1EEA00;
+  margin-bottom:40px;
+  .title {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: bold;
+    color: #004B40;
+  }
+  img {
+    width: 72px;
+  }
+  p{
+    font-family: 'Avenir LT Std', sans-serif;
+    color: #757575;
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    margin: 12px 0;
+  }
+  span {
+    font-weight: 700;
+  }
+}
+
+.main{
+  .title{
+    font-size: 16px;
+    color: #004B40;
+    line-height: 19px;
+    font-weight: bold;
+  }
+  p{
+    font-family: 'Avenir LT Std', sans-serif;
+    color: #323232;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .link{
+    margin-top: 40px;
+    a {
+      color: #004B40;
+      font-size: 16px;
+      line-height: 19px;
+      font-family: 'Avenir LT Std', sans-serif;
+      font-weight: 900;
+      text-decoration: underline;
+    }
+  }
+}
+
+.confirm-form{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 40px;
+  ion-checkbox{
+    --checkmark-color: white;
+  }
+  label{
+    color: #004B40;
+    font-size: 16px;
+    line-height: 19px;
+    font-family: 'Avenir LT Std', sans-serif;
+  }
+}
+
+.btn{
+  padding: 16px;
+  width: 100%;
+  background: var(--ion-color-primary);
+  border-radius: 40px;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #004B40;
+  margin-bottom: 24px;
+}
+
+
+.modal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  .title{
+    font-size: 20px;
+    line-height: 21px;
+    color: #004B40;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+  }
+  p{
+    font-size: 16px;
+    line-height: 21px;
+    color: #212121;
+    font-family: 'Avenir LT Std', sans-serif;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .btn{
+    padding: 8px;
+    margin-bottom: 0;
+  }
+}
