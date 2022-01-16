@@ -18,9 +18,12 @@
             [class.error]="documentType.errors && documentType.touched"
           >
             <ion-label position="floating">Tipo de documento</ion-label>
-            <ion-select formControlName="documentType" okText="Okay!">
-              <ion-select-option value="bacon">Cedula de ciudadania</ion-select-option>
-              <ion-select-option value="olives">Nit de empresa</ion-select-option>
+            <ion-select interface="popover" formControlName="documentType" okText="Okay!">
+              <ion-select-option
+                *ngFor="let document of documentTypes"
+                [value]="document.notation">
+                  {{ document.description }}
+              </ion-select-option>
             </ion-select>
           </ion-item>
           <div *ngIf="documentType.errors && documentType.touched" class="error-message">
@@ -67,9 +70,12 @@
             [class.error]="gender.errors && gender.touched"
           >
             <ion-label position="floating">Genero</ion-label>
-            <ion-select formControlName="gender" okText="Okay!">
-              <ion-select-option value="bacon">Cedula de ciudadania</ion-select-option>
-              <ion-select-option value="olives">Nit de empresa</ion-select-option>
+            <ion-select interface="popover" formControlName="gender" okText="Okay!">
+              <ion-select-option
+                *ngFor="let gender of genders"
+                [value]="gender.name">
+                {{ gender.description }}
+              </ion-select-option>
             </ion-select>
           </ion-item>
           <div *ngIf="gender.errors && gender.touched" class="error-message">

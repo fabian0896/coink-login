@@ -1,7 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonDatetime } from '@ionic/angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { format, parseISO } from 'date-fns';
+import { zip } from 'rxjs';
+import { CoinkService } from '../core/services/coink.service';
+
+import { Document } from 'src/app/models/document.model';
+import { Gender } from 'src/app/models/gender.model';
+import { LoaderControllerService } from '../core/services/loader-controller.service';
 
 @Component({
   selector: 'app-acount-form',
@@ -14,9 +19,13 @@ export class AccountFormPage implements OnInit {
   showCode = false;
   showCodeConfirm = false;
 
+  documentTypes: Document[] = [];
+  genders: Gender[] = [];
 
   constructor(
     private builder: FormBuilder,
+    private coinkService: CoinkService,
+    private loaderCtr: LoaderControllerService,
   ) {
     this.form = this.builder.group({
       phoneNumber: '',
@@ -44,7 +53,20 @@ export class AccountFormPage implements OnInit {
   get code(){ return this.form.get('code'); }
   get codeConfirm(){ return this.form.get('codeConfirm'); }
 
+  async getOptions() {
+    const loader = await this.loaderCtr.show()
+    const [documentTypes, genders] = await zip(
+      this.coinkService.getDocumentTypes(),
+      this.coinkService.getGenders(),
+    ).toPromise();
+    console.log(documentTypes, genders);
+    this.genders = genders;
+    this.documentTypes = documentTypes;
+    await loader.dismiss();
+  }
+
   ngOnInit() {
+    this.getOptions();
   }
 
   emailMatchValidator(g: FormGroup) {

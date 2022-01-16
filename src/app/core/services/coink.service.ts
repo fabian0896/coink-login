@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { EncryptService } from './encrypt.service';
+import { Document } from 'src/app/models/document.model';
+import { Gender } from 'src/app/models/gender.model';
 
 import { map } from 'rxjs/operators';
 
@@ -39,10 +41,10 @@ export class CoinkService {
   }
 
   getDocumentTypes() {
-    return this.http.get(`${this.apiUrl}/documentTypes`);
+    return this.http.get<Document[]>(`${this.apiUrl}/documentTypes`);
   }
 
   getGenders() {
-    return this.http.get(`${this.apiUrl}/genders`);
+    return this.http.get<Gender[]>(`${this.apiUrl}/genders`);
   }
 }

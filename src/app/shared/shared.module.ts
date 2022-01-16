@@ -9,6 +9,8 @@ import { ModalComponent } from './components/modal/modal.component';
 import { ErrorModalComponent } from './components/error-modal/error-modal.component';
 import { HeaderComponent } from './components/header/header.component';
 import { DatetimeComponent } from './components/datetime/datetime.component';
+import { LoaderComponent } from './components/loader/loader.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -21,12 +23,14 @@ import { DatetimeComponent } from './components/datetime/datetime.component';
     ErrorModalComponent,
     HeaderComponent,
     DatetimeComponent,
+    LoaderComponent,
   ],
   imports: [
     CommonModule,
     IonicModule,
     FormsModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
   ],
   exports: [
     StepperComponent,
@@ -36,6 +40,7 @@ import { DatetimeComponent } from './components/datetime/datetime.component';
     ErrorModalComponent,
     HeaderComponent,
     DatetimeComponent,
+    LoaderComponent,
   ]
 })
 export class SharedModule { }
