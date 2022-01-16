@@ -1,4 +1,4 @@
-<app-header title="DATOS DE CUENTA" [step]="2"></app-header>
+<app-header back="/phone-number" title="DATOS DE CUENTA" [step]="2"></app-header>
 
 <ion-content>
   <div class="content">
@@ -163,7 +163,7 @@
         </div>
       </div>
 
-      <button type="submit" [disabled]="form.invalid" class="submit-btn ion-activatable">
+      <button type="submit" [disabled]="form.invalid" class="btn primary submit-btn ion-activatable">
         SIGUIENTE
         <ion-ripple-effect></ion-ripple-effect>
       </button>

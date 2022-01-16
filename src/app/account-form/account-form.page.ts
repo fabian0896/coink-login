@@ -7,6 +7,9 @@ import { CoinkService } from '../core/services/coink.service';
 import { Document } from 'src/app/models/document.model';
 import { Gender } from 'src/app/models/gender.model';
 import { LoaderControllerService } from '../core/services/loader-controller.service';
+import { Router } from '@angular/router';
+import { AccountService } from '../core/services/account.service';
+import { AccountData } from '../models/account.model';
 
 @Component({
   selector: 'app-acount-form',
@@ -26,9 +29,10 @@ export class AccountFormPage implements OnInit {
     private builder: FormBuilder,
     private coinkService: CoinkService,
     private loaderCtr: LoaderControllerService,
+    private router: Router,
+    private accountService: AccountService,
   ) {
     this.form = this.builder.group({
-      phoneNumber: '',
       documentType: ['', [Validators.required]],
       document: ['', [Validators.required]],
       expeditionDate: ['', [Validators.required]],
@@ -80,7 +84,12 @@ export class AccountFormPage implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form.value);
+    if (this.form.invalid) {
+      return;
+    }
+    const data = this.form.value as AccountData;
+    this.accountService.setData(data);
+    this.router.navigateByUrl('/info');
   }
 
 

@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { DatetimeComponent } from './components/datetime/datetime.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -31,6 +32,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
+    RouterModule,
   ],
   exports: [
     StepperComponent,

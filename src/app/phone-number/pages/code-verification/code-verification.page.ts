@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
+import { AccountService } from 'src/app/core/services/account.service';
 import { CoinkService } from 'src/app/core/services/coink.service';
 
 @Component({
@@ -18,8 +19,9 @@ export class CodeVerificationPage implements OnInit {
     private coinkService: CoinkService,
     private router: Router,
     private toastController: ToastController,
+    private accountService: AccountService,
   ) {
-    this.phone = this.router.getCurrentNavigation().extras.state.phone;
+    this.phone = this.accountService.getPhone().value;
   }
 
   ngOnInit() {
@@ -36,11 +38,8 @@ export class CodeVerificationPage implements OnInit {
   verifyCode(code: string) {
     const sameCode = this.coinkService.verifyCode(code);
     if (sameCode) {
-      this.router.navigateByUrl('/account-form', {
-        state: {
-          phone: this.phone,
-        },
-      });
+      this.accountService.setPhoneVerified();
+      this.router.navigateByUrl('/account-form');
       return;
     }
     this.error = true;

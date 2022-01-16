@@ -19,7 +19,7 @@
 }
 
 .title{
- color: #1EEA00;
+ color: var(--ion-color-primary);
  font-size: 18px;
  line-height: 24px;
  font-weight: bold;
@@ -30,29 +30,6 @@
 .btn-container{
   padding: 0 25px;
   margin-bottom: 40px;
-}
-
-.btn{
-  width: 100%;
-  display: block;
-  padding: 16px;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: bold;
-  border-radius: 40px;
-  margin-bottom: 16px;
-  position: relative;
-  overflow: hidden;
-}
-
-.primary {
-  background: #1EEA00;
-  color: #004B40;
-}
-
-.secondary{
-  background: #004B40;
-  color: #FFFFFF;
 }
 
 

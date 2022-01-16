@@ -6,7 +6,7 @@
 }
 
 .pad{
-  color: #004B40;
+  color: var(--ion-color-secondary);
   font-weight: 600;
   font-size: 32px;
   line-height: 38px;
@@ -17,7 +17,7 @@
 }
 
 .circle {
-  background: #1EEA00;
+  background: var(--ion-color-primary);
   transition: .1s;
   &:disabled{
     background: #D3D3D3;
