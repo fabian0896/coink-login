@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>resume</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Datos de la cuenta</ion-label>
+    </ion-list-header>
+
+    <ion-item *ngFor="let data of flatAccount">
+      <ion-label>
+        <h2>{{ data[1] }}</h2>
+        <p>{{ data[0] }}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

@@ -60,6 +60,10 @@ export class DatetimeComponent implements OnInit, ControlValueAccessor {
     return format(parseISO(date), 'dd/MM/yyyy');
   }
 
+  open() {
+    this.openModal = true;
+  }
+
   toggleModal() {
     this.openModal = !this.openModal;
   }

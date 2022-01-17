@@ -58,7 +58,7 @@ export class AccountFormPage implements OnInit {
   get codeConfirm(){ return this.form.get('codeConfirm'); }
 
   async getOptions() {
-    const loader = await this.loaderCtr.show()
+    const loader = await this.loaderCtr.show();
     const [documentTypes, genders] = await zip(
       this.coinkService.getDocumentTypes(),
       this.coinkService.getGenders(),

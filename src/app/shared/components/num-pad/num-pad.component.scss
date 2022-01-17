@@ -1,33 +1,43 @@
-.num-pad{
+.num-pad {
   width: 100%;
   height: 300px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 
-.pad{
+.pad {
   color: var(--ion-color-secondary);
   font-weight: 600;
-  font-size: 32px;
+  font-size: 30px;
   line-height: 38px;
   background: transparent;
   position: relative;
   border-radius: 5px;
   overflow: hidden;
+  outline: none;
 }
 
 .circle {
   background: var(--ion-color-primary);
-  transition: .1s;
-  &:disabled{
-    background: #D3D3D3;
+  transition: 0.1s;
+  &:disabled {
+    background: #d3d3d3;
+    --background: #d3d3d3;
   }
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   place-self: center;
   overflow: hidden;
+  display: block;
+  position: relative;
+  place-content: center;
+}
+
+.check {
+  width: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

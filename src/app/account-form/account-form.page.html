@@ -36,7 +36,7 @@
             [class.error]="document.errors && document.touched"
           >
             <ion-label position="floating">Numero de documento</ion-label>
-            <ion-input formControlName="document"></ion-input>
+            <ion-input inputmode="numeric" formControlName="document"></ion-input>
           </ion-item>
           <div *ngIf="document.errors && document.touched" class="error-message">
             el numero de documento es requerido
@@ -93,7 +93,7 @@
             [class.error]="email.errors && email.touched"
           >
             <ion-label position="floating">Correo electrónico</ion-label>
-            <ion-input formControlName="email" type="email"></ion-input>
+            <ion-input inputmode="email" formControlName="email" type="email"></ion-input>
           </ion-item>
           <div *ngIf="email.errors?.required && email.touched" class="error-message">
             El correo electronico es requerido
@@ -108,7 +108,7 @@
             [class.error]="(emailConfirm.errors || form.errors?.mismatchEmail) && emailConfirm.touched"
           >
             <ion-label position="floating">Confirmar correo electrónico</ion-label>
-            <ion-input formControlName="emailConfirm" type="email"></ion-input>
+            <ion-input inputmode="email" formControlName="emailConfirm" type="email"></ion-input>
           </ion-item>
           <div *ngIf="form.errors?.mismatchEmail && emailConfirm.touched" class="error-message">
             Los correos deben coincidir

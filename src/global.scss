@@ -11,8 +11,8 @@
 
 /* Core CSS required for Ionic components to work properly */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('http://fonts.cdnfonts.com/css/avenir-lt-std');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("http://fonts.cdnfonts.com/css/avenir-lt-std");
 
 @import "~@ionic/angular/css/core.css";
 
@@ -20,7 +20,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -29,12 +29,11 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-
 body {
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
 }
 
-.btn{
+.btn {
   width: 100%;
   display: block;
   padding: 16px;
@@ -45,11 +44,12 @@ body {
   margin-bottom: 16px;
   position: relative;
   overflow: hidden;
-  &.primary{
+  outline: none;
+  &.primary {
     background: var(--ion-color-primary);
     color: var(--ion-color-secondary);
   }
-  &.secondary{
+  &.secondary {
     background: var(--ion-color-secondary);
     color: var(--ion-color-secondary-contrast);
   }

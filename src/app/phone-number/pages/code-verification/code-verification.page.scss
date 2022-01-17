@@ -1,22 +1,21 @@
-
-.content{
+.content {
   padding: 24px;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.message{
+.message {
   padding: 24px 0;
   display: flex;
   gap: 23px;
-  border-bottom: 1px solid #1EEA00;
+  border-bottom: 1px solid #1eea00;
   margin-bottom: 32px;
   img {
     width: 72px;
   }
-  p{
-    font-family: 'Avenir LT Std', sans-serif;
+  p {
+    font-family: "Avenir LT Std", sans-serif;
     color: #757575;
     font-size: 16px;
     line-height: 19px;
@@ -27,15 +26,15 @@
   }
 }
 
-.input-container{
-  background: #FAFAFA;
+.input-container {
+  background: #fafafa;
   width: 100%;
   padding: 14px 40px;
   border-radius: 5px;
-  box-shadow: #3535351A 0px 5px 5px;
-  input{
+  box-shadow: #3535351a 0px 5px 5px;
+  input {
     outline: none;
-    font-size: 24px;
+    font-size: 22px;
     text-align: center;
     font-weight: 500;
     color: #212121;
@@ -44,6 +43,3 @@
     background: transparent;
   }
 }
-
-
-

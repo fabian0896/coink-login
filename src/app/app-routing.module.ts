@@ -22,6 +22,15 @@ const routes: Routes = [
   {
     path: 'info',
     loadChildren: () => import('./info/info.module').then( m => m.InfoPageModule)
+  },
+  {
+    path: 'resume',
+    loadChildren: () => import('./resume/resume.module').then( m => m.ResumePageModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'login',
+    pathMatch: 'full'
   }
 ];
 @NgModule({

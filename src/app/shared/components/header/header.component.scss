@@ -1,4 +1,4 @@
-.header-container{
+.header-container {
   width: 100%;
   padding: 24px 13px;
   padding-bottom: 8px;
@@ -6,27 +6,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: white;
 }
 
-.header{
+.header {
   position: relative;
   margin-bottom: 16px;
   width: 100%;
 }
 
-.icon{
-  color: #1EEB00;
+.icon {
+  color: #1eeb00;
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
 }
 
-.title{
+.title {
   margin: 0;
   font-size: 16px;
   line-height: 22px;
   font-weight: bold;
   text-align: center;
-  color: #004B40;
+  color: #004b40;
 }
