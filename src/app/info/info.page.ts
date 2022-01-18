@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AccountService } from '../core/services/account.service';
 
 @Component({
@@ -13,6 +14,7 @@ export class InfoPage implements OnInit {
 
   constructor(
     private accountService: AccountService,
+    private router: Router,
   ) {
     this.checkTerms = new FormControl(false, [Validators.requiredTrue]);
   }
@@ -24,6 +26,10 @@ export class InfoPage implements OnInit {
       const account = this.accountService.getAccount();
       console.log(account);
     }
+  }
+
+  onClose() {
+    this.router.navigateByUrl('/resume');
   }
 
   ngOnInit() {

@@ -30,14 +30,14 @@
   </button>
 </ion-content>
 
-<app-modal [openModal]="success">
+<app-modal (closeModal)="onClose()" [openModal]="success">
   <div class="modal">
     <img src="/assets/images/marrano-regalo.svg" alt="">
     <div>
       <h2 class="title">¡Bienvenido a Coink!</h2>
       <p>¡Cuenta creada exitosamente, tu marrano ya está listo para que empieces a ahorrar!</p>
     </div>
-    <button class="btn">CONTINUAR</button>
+    <button (click)="success = false" class="btn">CONTINUAR</button>
   </div>
 </app-modal>
 

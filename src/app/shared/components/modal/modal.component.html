@@ -1,4 +1,4 @@
-<ion-modal [isOpen]="openModal">
+<ion-modal (didDismiss)="onClose()" [isOpen]="openModal">
   <ng-template>
     <ion-content [fullscreen]="true">
       <div class="overlay">
