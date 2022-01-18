@@ -9,7 +9,6 @@ ion-content{
   padding: 24px 0;
   padding-top: 0;
   display: flex;
-  gap: 23px;
   border-bottom: 1px solid #1EEA00;
   margin-bottom:40px;
   .title {
@@ -20,6 +19,7 @@ ion-content{
   }
   img {
     width: 72px;
+    margin-right: 23px;
   }
   p{
     font-family: 'Avenir LT Std', sans-serif;
@@ -62,11 +62,11 @@ ion-content{
 
 .confirm-form{
   display: flex;
-  gap: 8px;
   align-items: center;
   margin-bottom: 40px;
   ion-checkbox{
     --checkmark-color: white;
+    margin-right: 8px;
   }
   label{
     color: #004B40;
@@ -94,7 +94,9 @@ ion-content{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 32px;
+  & > :not(:last-child) {
+    margin-bottom: 32px;
+  }
   .title{
     font-size: 20px;
     line-height: 21px;
